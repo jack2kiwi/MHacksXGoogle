@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Assistant</title>
+</head>
+<body>
+
+<h1>Search Assistant</h1>
+
+<!-- Camera Section -->
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap" onclick="takeSnapshot()" >Capture</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<!-- Speech Recognition Section -->
+<button id="start-speech-btn" onclick="startSpeechRecognition()">Start Speech Recognition</button>
+<button id="stop-speech-btn" onclick="stopSpeechRecognition()" disabled>Stop Speech Recognition</button>
+<p>Recorded Text:</p>
+<div id="speech-to-text"></div>
+
+<!-- Text Input for Text-to-Speech -->
+<div>
+    <label for="text-to-speak">Enter Text:</label>
+    <input type="text" id="text-to-speak" placeholder="Type something to speak">
+</div>
+
+<button id="upload-audio-btn" onclick="uploadAudioSearch()">Upload Voice Search</button>
+<button id="upload-text-btn" onclick="uploadTextSearch()">Upload Text Search</button>
+
+<div id="search-response"></div>
+
+<!-- <script src="script.js"></script> -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

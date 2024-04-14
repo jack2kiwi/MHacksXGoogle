@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camera, Audio Recorder, and Speech to Text</title>
+</head>
+<body>
+
+<h1>Camera, Audio Recorder, and Speech to Text</h1>
+
+<!-- Camera Section -->
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap" onclick="takeSnapshot()" >Capture</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+
+<!-- Speech Recognition Section -->
+<button id="start-speech-btn" onclick="startSpeechRecognition()">Start Speech Recognition</button>
+<button id="stop-speech-btn" onclick="stopSpeechRecognition()" disabled>Stop Speech Recognition</button>
+<p>Recorded Text:</p>
+<div id="speech-to-text"></div>
+
+<!-- Audio Recording Section -->
+<button id="start-audio-record-btn" onclick="startAudioRecording()">Start Audio Recording</button>
+<button id="stop-audio-record-btn" onclick="stopAudioRecording()" disabled>Stop Audio Recording</button>
+<audio id="audio-playback" controls></audio>
+
+<button id="upload-image-btn" onclick="uploadImage()">Upload Image</button>
+<button id="upload-audio-btn" onclick="uploadAudio()">Upload Audio</button>
+
+<!-- Text Input for Text-to-Speech -->
+<div>
+    <label for="text-to-speak">Enter Text:</label>
+    <input type="text" id="text-to-speak" placeholder="Type something to speak">
+    <button onclick="speakText('text-to-speak')">Speak</button>
+</div>
+
+<!-- <script src="script.js"></script> -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
